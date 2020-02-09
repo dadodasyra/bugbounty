@@ -1,0 +1,28 @@
+name: BugBounty
+main: bugbounty\Main
+version: 1.0.0
+api: 3.0.0
+author: dadodasyra
+description: A full BugBounty system
+commands:
+  bug:
+    description: 'Report a bug to the staff'
+  bugreward:
+    description: 'Reward a bug'
+    permission: "bug.reward"
+  bugfix:
+    description: 'Change the status of fix of a bug'
+    permission: 'bug.fix'
+  buglist:
+    description: 'Give a list of bugs'
+    permission: 'bug.list'
+permissions:
+  bug.reward:
+    description: 'Allows you to give a reward to a bug report'
+    default: 'op'
+  bug.fix:
+    description: 'Allows you to change the status of a bug'
+    default: 'op'
+  bug.list:
+    description: 'Allows access to the list of reported bugs'
+    default: 'op'
