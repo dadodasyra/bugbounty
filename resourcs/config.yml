@@ -1,0 +1,17 @@
+#Webhook tuto : https://support.discordapp.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+version: "1.0" #Please do not touch this
+
+webhook_name: "Bug report" #The name of the webhook here
+webhook_url: "https://discordapp.com/api/webhooks/XXXX/XXXX" #put here your webhook url
+
+delete_bug_logs: "true" #Delete the bug log if the fix of bug has been set to true (If it is true It is delete when the player join the server)
+#WARNING ! If you want to reward players and this feature is enabled, please /bugreward the bug before setting fix to true.
+#Indeed if the bugreward was not chosen, when connecting the player the bug log will be deleted (idk if it is clear)
+
+reward:
+  0: [["0:0", 0]] #Do not touch 0, it is for no reward.
+  1: [["1:0", 1], ["2:0", 1]] #FORMAT: [["ID:META", COUNT]], for example : [["1:0", 2]] It give two stone
+  2: [["1:0", 2]] #LINK FOR MCPE ID: https://www.digminecraft.com/lists/item_id_list_pe.php
+  3: [["1:0", 2]] #FOR MULTIPLE ITEM: [["1:0", 2], ["12:0", 2]], etc..
+  4: [["1:0", 2]] #Three items [["1:0", 2], ["2:0", 2], ["3:0", 2]]
+  5: [["1:0", 2]] #Don't forget []
