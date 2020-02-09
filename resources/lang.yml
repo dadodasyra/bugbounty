@@ -1,0 +1,57 @@
+---
+
+# GENERAL INFORMATION :
+#
+# {player} Name of the player concerned
+# {bug} The description of the bug give by the player
+# {id} The id of the bug
+# {reward} The value of reward (1-5/false)
+# {give} If the player has already connected to save his reward (true or false)
+# {fix} If the bug has been set to fix (true or false)
+# ­ = invisible caracter for discord & certain editor
+# \n = start a new line
+#
+#Please don't use & but §
+
+###General
+
+outdated_config: "Your config of BugBounty is outdated, so the old config has been renamed oldconfig.yml"
+no_permission: "You don''t have permission to use this command"
+no_id: "§4Please enter the bug id."
+bad_id: "§4Please enter a valid ID."
+
+###/bug
+no_args: "§4Please enter a bug description."
+###Bug process
+discord_console_bug: "**CONSOLE** reported this bug :\n\n**{bug}**\n­"
+player_confirmation_bug: "§cYour bug has sucessfully been send to the staff.\n§eThanks for helping to become a best server [BUG ID §3{id}§e]"
+discord_confirmation_bug: "**{player}** has reported the bug number **{id}**:\n\n**{bug}**\n­"
+
+
+###/bugreward
+no_number: "§4Please enter a number of reward."
+bad_number: "§4Please enter a valid number of reward. (beetween 0 and 5)"
+#For the no_id look in General
+###Reward Process
+already_reward: "§3{player} §4has already been rewarded."
+sucess_reward: "§3{player} §4will be rewarded with the level reward §3" #after reward there is automatic the number of reward
+discord_sucess_reward: "**{player}** has been rewarded for the bug number **{id}** with the number reward **{reward}**"
+
+###/id, nothing
+
+###/fix
+#For the no_id look in General
+true_fix: "§cThe fix of bug {id} has been succesfully set to §4true"
+false_fix: "§4The bug {id} was already set to true, so I set it to §4false"
+
+###/buglist
+#For the no_id look in General
+buglist_limit: 20 #default 20
+buglist_format: "§o§4FORMAT : §bID OF BUG §e-> §bPLAYERNAME §e| §bREWARD NUMBER§e, §bREWARD GIVE §e| §cFIX"
+buglist: "§e! §b{id} §e-> §b{player} §e| §b{reward}§e, §b{give} §e| §c{fix}"
+
+
+###Join / Get items
+no_reward: "The staff decided not to be rewarded for the bug number {id}, sad..."
+give_confirmation: "§eThanks to have contributate with us, you have been rewarded with the level {lvl}/5 of reward ! §b[Bug id: {id}]"
+full_inventory: "The staff decided to reward you for the bug that you provided us but you are full, I will try to give you the rewards the next time you connect to the server"
