@@ -8,6 +8,8 @@ delete_bug_logs: "true" #Delete the bug log if the fix of bug has been set to tr
 #WARNING ! If you want to reward players and this feature is enabled, please /bugreward the bug before setting fix to true.
 #Indeed if the bugreward was not chosen, when connecting the player the bug log will be deleted (idk if it is clear)
 
+buglist_limit: 20 #default 20
+
 reward:
   0: [["0:0", 0]] #Do not touch 0, it is for no reward.
   1: [["1:0", 1], ["2:0", 1]] #FORMAT: [["ID:META", COUNT]], for example : [["1:0", 2]] It give two stone
