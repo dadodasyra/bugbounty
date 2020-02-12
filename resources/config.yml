@@ -1,5 +1,5 @@
 #Webhook tuto : https://support.discordapp.com/hc/en-us/articles/228383668-Intro-to-Webhooks
-version: "1.0" #Please do not touch this
+version: "1.1" #Please do not touch this
 
 webhook_name: "Bug report" #The name of the webhook here
 webhook_url: "https://discordapp.com/api/webhooks/XXXX/XXXX" #put here your webhook url
