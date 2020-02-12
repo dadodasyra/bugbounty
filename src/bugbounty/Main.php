@@ -12,19 +12,23 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat as C;
+use SQLite3;
 
 class Main extends PluginBase implements Listener
 {
+    /** @var SQLite3 */
     public $db;
     public $args;
     public $sender;
+    /** @var Config */
     public $config;
+    /** @var Config */
     public $lang;
 
     public function onEnable()
     {
         @mkdir($this->getDataFolder());
-        $this->db = new \SQLite3($this->getDataFolder() . "bugbounty.db");
+        $this->db = new SQLite3($this->getDataFolder() . "bugbounty.db");
         $this->db->exec("CREATE TABLE IF NOT EXISTS bugbounty(id INTEGER PRIMARY KEY autoincrement, player TEXT, bug TEXT, fix TEXT, reward TEXT, rewardgive TEXT);");
 
         $this->saveDefaultConfig();
@@ -94,9 +98,9 @@ class Main extends PluginBase implements Listener
                 $this->fixcommand($sender, $args);
                 break;
             case 'buglist':
-                if (!$sender->hasPermission("bug.list")) return $this->lang->get("no_permission");
-                $this->buglistcommand($sender, $args);
-                break;
+            if (!$sender->hasPermission("bug.list")) return $this->lang->get("no_permission");
+                $this->buglistcommand($sender);
+            break;
         }
         return true;
     }
@@ -194,13 +198,12 @@ class Main extends PluginBase implements Listener
 
     /**
      * @param CommandSender $sender
-     * @param array $args
      */
-    public function buglistcommand(Commandsender $sender, array $args){
+    public function buglistcommand(Commandsender $sender){
         $buglist = $this->db->query("SELECT * FROM bugbounty LIMIT {$this->lang->get("buglist_limit")};");
         $sender->sendMessage($this->lang->get("buglist_format"));
         while ($result = $buglist->fetchArray(SQLITE3_ASSOC)) {
-            if($this->lang->get("delete_bug_logs") === "true"){
+            if($this->config->get("delete_bug_logs") === "true"){
                 if($result["fix"] === "true" && $result["rewardgive"] === "true"){
                     $this->db->query("DELETE FROM bugbounty WHERE id = '{$result["id"]}';");
                 }
@@ -213,7 +216,7 @@ class Main extends PluginBase implements Listener
     /**
      * @param PlayerJoinEvent $event
      */
-    public function onJoin(PlayerJoinEvent $event)
+    public function onJoin(PlayerJoinEvent $event) : void 
     {
         $player = $event->getPlayer();
         $playername = $player->getName();
