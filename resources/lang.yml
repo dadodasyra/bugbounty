@@ -46,7 +46,6 @@ false_fix: "§4The bug {id} was already set to true, so I set it to §4false"
 
 ###/buglist
 #For the no_id look in General
-buglist_limit: 20 #default 20
 buglist_format: "§o§4FORMAT : §bID OF BUG §e-> §bPLAYERNAME §e| §bREWARD NUMBER§e, §bREWARD GIVE §e| §cFIX"
 buglist: "§e! §b{id} §e-> §b{player} §e| §b{reward}§e, §b{give} §e| §c{fix}"
 
