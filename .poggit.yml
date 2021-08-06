@@ -1,8 +1,0 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/dadodasyra/bugbounty
-build-by-default: true
-branches:
-- master
-projects:
-  bugbounty:
-    path: ""
-...
